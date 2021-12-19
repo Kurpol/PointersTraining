@@ -3,38 +3,17 @@
 
 int main()
 {
-	const int length = 12;
+	int number; 
+	int& reference = number; 
 
-	char* pointer;
-	char* q_pointer;
+	number = 10;
 
-	char massive[length];
 
-	pointer = massive;
-	q_pointer = &massive[length - 1];
+	std::cout << number << std::endl;
+	std::cout << reference << std::endl;
 
-	pointer[0] = 'A';
-
-	while (pointer != q_pointer)
-	{
-		pointer++;
-
-		*pointer = pointer[-1] + 1;
-	}
-
-	for (int i = 0; i < length; i++)
-	{
-		std::cout << massive[i] << " | ";
-	}
-
-	std::cout << std::endl;
-
-	for (int i = 0; i < length; i++)
-	{
-		std::cout << q_pointer[-i] << " | ";
-	}
-
-	std::cout << std::endl;
+	std::cout << &number << std::endl;
+	std::cout << &reference << std::endl;
 
 	return 0;
 }
